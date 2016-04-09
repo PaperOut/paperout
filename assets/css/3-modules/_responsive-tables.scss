@@ -1,0 +1,150 @@
+/* Responsive Standard Tables */
+table.respond {
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+        tr {
+            border-bottom: 5px solid #fff;
+            padding: 5px;
+            background-color: #ECECEC;
+            
+            &:nth-of-type(odd) {
+                background-color: #F2F2F2;
+            }
+            
+            td {
+                a button {
+                    margin-bottom: 1%;
+                }
+            }
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+}
+
+table.right-input td[data-label="Hours"] {
+    text-align: right;
+}
+
+@media screen and (max-width: $break-phone) {
+
+    table.respond {
+        border: 0;
+        
+        thead {
+            display: none;
+        }
+
+        tr {
+            margin-bottom: 10px;
+            display: block;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td {
+            display: block;
+            text-align: right;
+            border-bottom: 1px dotted #ccc;
+        
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            &:before {
+                content: attr(data-label);
+                float: left;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            
+            a button {
+                margin-bottom: 0!important;
+            }
+        }
+    }
+}
+
+/* Extras for Management Tables (Orgs and Users) */
+
+table.respond.manage-table {
+    .manage-table--user, .manage-table--orgs {
+        text-align: left;
+    }
+    
+    .manage-table--user {
+        text-transform: lowercase;
+    }
+    
+    .manage-table--remove {
+        text-align: right;
+    }     
+    
+    a {
+        color: #515151;
+
+        &:hover {
+            opacity: 0.5;
+            }
+        }
+}
+
+table + input[type="submit"],
+table + div {
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: $break-phone) {
+
+    table.respond.manage-table {
+        .manage-table--user,
+        .manage-table--orgs,
+        .manage-table--break {
+            text-align: right;
+        }
+    }
+
+}
+
+/* Extra for Print Icon Column */
+
+.print_details {
+    a {
+        color: #515151;
+        
+        &:hover {
+            opacity: 0.5;
+            }
+        }
+    }
+ 
+@media screen and (max-width: $break-phone) {
+    
+.print_details {
+    
+    a {
+        color: #515151;
+        
+        &:hover {
+            opacity: 0.5;
+            }
+        }
+    }
+}
+
+table.respond {
+    input, textarea, select, fieldset {
+        margin-bottom: 0; 
+    }
+}

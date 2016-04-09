@@ -1,0 +1,443 @@
+/*----------------------------------------------------
+	ADMIN SECTION
+-----------------------------------------------------*/
+
+/* Overall Structure */
+#admin-wrap,
+.admin-sidebar,
+.toggle-menu {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#admin-wrap {
+    position: relative;
+    padding-left: 0;
+}
+    #admin-wrap.active .admin-sidebar {
+        left: 250px;
+        width: 250px;
+    }
+
+    #admin-wrap.active .toggle-menu {
+        left: 250px;
+    }
+
+
+.admin-sidebar {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    width: 250px;
+    margin-left: -250px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #5F5F5F;
+    height: 100%;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+            margin: 0;
+
+            a {
+                color: #fff;
+                padding: 18px 0 18px 20px;
+                display: block;
+                
+                &:hover {
+                    background-color: #4F4F4F;
+                }
+            }
+            
+            .active {
+                background: #4F4F4F;
+                
+                a {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+/* Toggle Menu */
+
+.toggle-menu {
+    position: fixed;
+    display: block; 
+    top: 0;
+    left: 0 !important;
+    background: #1b1b1b;
+    background: rgba(27,27,27,0.7);
+    @include font-size(2.6);
+    z-index: 10;
+    padding: 10px 13px 11px 10px;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background: #000;
+        color: #fff;
+    }
+}
+
+
+
+body.admin-body {
+    background-color: #EFEFEF;
+    padding-left: 250px;
+    
+    .container {
+        margin: 0;
+        max-width: none;
+        width: 100% !important;
+    }
+    
+    h1.admin-page-title {
+        margin: -16px 0 20px 0;
+        padding: 0;
+        text-transform: uppercase;
+        @include font-size(1.5);
+        @include line-height(2.6);
+        font-weight: 400;
+        color: #696969;
+        
+        a {
+            color: #696969;
+            border-bottom: 1px solid #696969;
+            font-weight: 600;
+            
+            &:hover {
+                border-bottom: 1px solid #000;
+                color: #000;
+            }
+        }
+    }
+    
+    h3 {
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 0;
+        margin: 0 0 10px 0px;
+    }
+}
+
+.admin-content-wrapper {
+    background-color: #EFEFEF;
+    padding: 20px 20px 0 40px;
+}
+
+.admin-header-wrapper {
+    margin-bottom: 50px;
+}
+
+.admin-header-bar {
+    background-color: #1b1b1b;
+    width: 100%;
+    display: block;
+    height: auto;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    h1 {
+        @include font-size(1.9);
+        font-weight: 400;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 20px 0;
+        margin: 0 0 0 15px;
+    }
+    
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+            
+        li {
+            float: right;
+            
+            a {
+                display: block;
+                padding: 15px;
+                color: #fff;
+                
+                &:hover {
+                    background: rgba(255, 255, 255, .2);
+                }
+            }
+        }
+    }   
+}   
+
+
+
+@media (min-width: $break-tablet) {
+
+    #admin-wrap {
+        left: 0;
+    }
+    .admin-sidebar {
+        left: 250px;
+        top: 55px;
+    }
+
+    .toggle-menu {
+        position: fixed;
+        left: 0;
+        display: none;
+    }
+
+    #admin-wrap.active .toggle-menu {
+        left: 0;
+    }
+      
+}
+
+
+@media (max-width: $break-phone) {
+    
+
+    body.admin-body {
+        padding-left: 0;
+        overflow-x: hidden;
+    }
+    
+    #admin-wrap.active {
+        position: relative;
+        left: 195px;
+        
+        .admin-sidebar {
+          left: 250px;
+          width: 195px;
+        }      
+
+    }
+    
+    .toggle-menu {
+        @include font-size(3);
+    }
+    
+    .admin-content-wrapper {
+        overflow: hidden !important;
+        padding: 1em;
+    }
+
+    .admin-header-bar {
+
+        h1 {
+            margin: 0 0 0 55px;
+            @include font-size(1.5);
+        }
+
+        nav ul {
+    
+            li {
+                @include font-size(1.5);
+
+                a {
+                    padding: 10px 15px 10px 10px;
+                }
+            }
+        }   
+    } 
+    
+    
+    .admin-sidebar {
+        nav ul {
+            
+            li {
+
+                a {
+                    @include font-size(1.4);
+                    padding: 9px;
+                }
+            }
+        }   
+    }  
+}
+
+@media (max-width: $break-small) {
+    .admin-content-wrapper {
+        overflow: hidden !important;
+        padding: .5em .2em .2em .2em;
+    }
+}
+
+
+.callout {
+    word-break: break-word;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    
+    h2.callout-title {
+        @include font-size(1.8);
+        @include line-height(1.7);
+        background-color: $primary-color;
+        padding: 9px;
+        color: #fff;
+        font-weight: 600;
+        margin: -15px -15px 15px -15px;
+    }
+    
+    .text {
+        @include font-size(4.8);
+        @include line-height(6);
+        padding: 0;
+        margin: 0;
+    }
+    
+    .stroke-text {
+           color: #000;
+           text-shadow:
+               3px 3px 0 #fff,
+             -1px -1px 0 #fff,  
+              1px -1px 0 #fff,
+              -1px 1px 0 #fff,
+               1px 1px 0 #fff;
+    }
+    
+    span.fa.dash {
+        @include font-size(6.5);
+        color: $secondary-color;
+        font-weight: normal;
+        display: inline-block;
+        width: 5%;
+        height: 5%;
+    }
+}
+
+
+/* Manage Events Page */
+
+.edit-action {
+    display: inline-block;
+    float: right;
+    font-size: 1.7rem;
+    color: #fff;
+    
+    
+    &:hover {
+        color: rgba(255,255,255, .7);
+    }
+    
+    &:after {
+        content: "";
+        display: table;
+        clear: both; 
+    }
+}
+
+.add-action {
+    display: inline-block;
+    float: right;
+    font-size: 1.7rem;
+    color: #fff;
+    margin-bottom: 20px;
+    
+    @media (max-width: $break-tablet) {
+        margin-top: 20px;
+    }
+    
+    &:hover {
+        color: rgba(255,255,255, .7);
+    }
+    
+    &:after {
+        content: "";
+        display: table;
+        clear: both; 
+    }
+}
+
+.flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+
+    .cols {
+        min-height: 120px;        
+            
+        &.bkg-less-opaque {
+            background-color: rgba($secondary-color,.6);
+        }
+
+        &.bkg-more-opaque {
+            background-color: rgba($secondary-color,.3);
+        }
+    }
+}
+
+
+@media (max-width: $break-small) {
+    .flexbox {
+      display: block !important;
+    }
+      
+}
+
+
+a.event-box {
+    display: block;
+    padding: 11px;
+    color: #222;
+    background-image: url(../imgs/wrench-icon.png);
+    background-repeat: no-repeat;
+    background-position: right 12px top 12px;
+    
+
+    h3 {
+        text-transform: none;
+        padding-right: 12px;
+    }
+    
+    h4 {
+        font-size: 1.4rem;
+        color: #222;
+    }
+    
+    p.desc {
+        @include font-size(1.3);
+        @include line-height(1.8);
+        margin-bottom: 0;
+    }
+    
+    &:hover {
+        opacity: .85;
+    }
+}    
+.dash_eventlist {
+    @include line-height(1.9);
+    margin-bottom: 12px;
+    
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0 !important;
+        
+        @media (max-width: $break-small) {
+            margin-bottom: 15px;
+        }
+    }
+    
+
+}
+
+.dash_eventdate {
+    @include font-size(1.2);
+}

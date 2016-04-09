@@ -1,0 +1,83 @@
+/*----------------------------------------------------
+	USER FACING STRUCTURE
+-----------------------------------------------------*/
+
+.logo {
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 44px;
+    margin-bottom: 35px
+}
+
+.interior-header {
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+        
+    h1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 28px !important;
+        line-height: 1.1;
+    }
+    
+    .sml-logo {
+        margin: 0 auto;
+        text-align: center;
+    
+        img {
+            width: 80%;
+            height: 80%
+        }
+    }
+}
+
+/* Checkin/Pregreistration Page */
+.welcome {
+    
+    button {
+        @include font-size(3.7);
+        padding: .5em 1em .5em;
+    }
+    
+    input.register-email {
+        width: 80% !important;
+        height: 60px !important;
+        margin-bottom: 25px;
+    }
+    
+    a.under-18 {
+        display: inline-block;
+        margin-top: 30px;
+        color: #222;
+    }
+}
+
+
+
+/* Signature page which displays your entered data before you sign */
+.details {
+    
+   button {
+        margin: .5em 0 1.5em 0 ;
+    }
+    
+    .row {
+        margin-top: 13px;
+            
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
+
+    @media (max-width: 540px) {
+        .details .row {
+            margin-top: 0; /* Makes it so that when the items are stacked there is not space between the rows */
+
+            label {
+                margin: 3px 0 0 0
+            }
+        }
+    }

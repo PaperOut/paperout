@@ -1,0 +1,78 @@
+/*----------------------------------------------------
+	TYPOGRAPHY
+-----------------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-weight: 300;
+}
+
+h1 {
+    @include font-size(3.8);
+    @include line-height(1.2);
+    font-weight: 600;
+    color: #000;
+    
+    span {
+        @include font-size(2.5);
+        font-weight: 400
+    }
+}
+
+h2 {
+    @include font-size(2.1);
+    @include line-height(2);
+    margin-bottom: 8px;
+    font-weight: 700
+}
+
+h3 {
+    @include font-size(1.8);
+    @include line-height(2.1);
+}
+
+h4 {
+    @include font-size(1.7);
+    @include line-height(2.3);
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #4A4A4A;
+}
+
+h5 {
+    @include font-size(1.2);
+    @include line-height(1.4);
+}
+
+h6 {
+    @include font-size(1.1);
+    @include line-height(1.6);
+}
+
+p {
+    margin-top: 0;
+}
+
+.row p:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+footer {
+    @include font-size(1.2);
+    color: $primary-color;
+    
+    @media (max-width: 550px) {
+        @include font-size(.95);
+        @include line-height(1.6);
+    }
+}
+
+small {
+    @include font-size(1.2);
+    @include line-height(1.4);
+}
+
+.semibold {
+    font-weight: 600;
+}

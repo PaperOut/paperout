@@ -1,0 +1,184 @@
+/*----------------------------------------------------
+	FORM STYLING
+-----------------------------------------------------*/
+/*
+	Form Inputs
+-----------------------------------------------------*/
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: $primary-font !important;
+
+}
+/* Removes awkward default styles on some inputs for iOS */
+
+textarea, select {
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: $primary-font !important;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/* textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+} */
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #33C3F0;
+    outline: 0;
+}
+label,
+legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+fieldset {
+    padding: 0;
+    border-width: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}
+
+    input[type=checkbox].big:not(old),
+    input[type=radio].big:not(old){
+        margin: 0;
+        padding: 0;
+        height: 22px;
+        width: 22px;
+    }
+
+    input[type=checkbox].big:not(old) + label,
+    input[type=radio].big:not(old) + label{
+        display: block;
+        margin: -31px 0 0 23px;
+    }
+
+label > .label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal;
+}
+
+form:last-of-type {
+    margin-bottom:0;
+}
+
+input[disabled] {
+    background-color: #F7F7F7;
+    border-color: #DEDEDE;
+}
+
+
+/* Adding/Removing Inputs */
+.input_fields_wrap {
+    
+    .input_fields_input {
+        width: 92%;
+        
+        @media (max-width: 925px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 505px) {
+            width: 87%;
+        }
+        
+        @media (max-width: 400px) {
+            width: 82%;
+        }
+        
+        @media (max-width: 321px) {
+            width: 80%;
+        }
+    }
+    
+    img.add-input {
+        border: none;
+        position: relative;
+        top: 8px;
+
+        &:active, &:focus {
+            outline: none !important;
+        }
+
+        &:hover {
+            opacity: .35;
+            cursor: pointer;
+        }
+    }
+
+    img.remove-input {
+        border: none;
+        position: relative;
+        top: 8px;
+
+        &:active, &:focus {
+            outline: none !important;
+        }
+
+        &:hover {
+            opacity: .35;
+            cursor: pointer;
+        }
+    }
+    
+    .date-picker-select {
+        width: 30%;
+        
+        @media (max-width: 925px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 505px) {
+            width: 87%;
+        }
+        
+        @media (max-width: 400px) {
+            width: 82%;
+        }
+        
+        @media (max-width: 321px) {
+            width: 80%;
+        }
+    }
+    
+}
